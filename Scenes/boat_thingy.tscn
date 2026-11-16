@@ -1,0 +1,151 @@
+[gd_scene format=3 uid="uid://dih8rcishp4tv"]
+
+[ext_resource type="PackedScene" uid="uid://dj6tnsg0ucf10" path="res://Models/BoatThingy.glb" id="1_36iod"]
+[ext_resource type="Material" uid="uid://dmx2aif1kmtai" path="res://Shaders/new_standard_material_3d.tres" id="2_s6mxw"]
+[ext_resource type="PackedScene" uid="uid://uos6n5ukseb" path="res://Scenes/balls.tscn" id="3_6uncb"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6uncb"]
+diffuse_mode = 3
+specular_mode = 1
+albedo_color = Color(0.36004192, 0.17922583, 0.08862429, 1)
+
+[node name="BoatThingy" unique_id=45029623 instance=ExtResource("1_36iod")]
+
+[node name="BézierCircle" parent="." index="0" unique_id=1656548329]
+material_override = ExtResource("2_s6mxw")
+
+[node name="Plane" parent="." index="1" unique_id=937948547]
+material_override = ExtResource("2_s6mxw")
+
+[node name="Cube_003" parent="." index="2" unique_id=1430068722]
+material_override = ExtResource("2_s6mxw")
+
+[node name="AttachmentPoints" type="Node3D" parent="." index="3" unique_id=168872611]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1103215, 0.4206769, 1.2520622)
+
+[node name="Marker3D" type="Marker3D" parent="AttachmentPoints" index="0" unique_id=1628020952]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.41325498, 0.20408905, 1.1277214)
+
+[node name="Marker3D2" type="Marker3D" parent="AttachmentPoints" index="1" unique_id=1874487413]
+transform = Transform3D(0.99303705, 0, -0.117802545, 0, 1, 0, 0.117802545, 0, 0.99303705, -0.025216818, 0.01410073, -0.8993579)
+
+[node name="Marker3D3" type="Marker3D" parent="AttachmentPoints" index="2" unique_id=785551151]
+transform = Transform3D(0.97068185, 0, -0.24036798, 0, 1, 0, 0.24036798, 0, 0.97068185, 0.012656093, -0.081276715, -2.2531428)
+
+[node name="Marker3D4" type="Marker3D" parent="AttachmentPoints" index="3" unique_id=102304077]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8402541, 0.20408905, 1.1277214)
+
+[node name="Marker3D5" type="Marker3D" parent="AttachmentPoints" index="4" unique_id=362841847]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1779985, 0.01410073, -0.8993579)
+
+[node name="Marker3D6" type="Marker3D" parent="AttachmentPoints" index="5" unique_id=97504438]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2567601, -0.081276715, -2.2531428)
+
+[node name="BALLS 1" parent="." index="4" unique_id=366238209 instance=ExtResource("3_6uncb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1103215, -1.1920929e-07, 1.7242826)
+float_height = 0.0
+
+[node name="Sphere" parent="BALLS 1" index="0" unique_id=815253739]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.08016038, 0, 0)
+
+[node name="Path3D" parent="BALLS 1" index="1" unique_id=1010815469 node_paths=PackedStringArray("end_node")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.080090284, 0.3755637, 0.040764928)
+end_node = NodePath("../../AttachmentPoints/Marker3D")
+rope_length = 1.205
+
+[node name="CSGPolygon3D" parent="BALLS 1/Path3D" index="0" unique_id=548303749]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+polygon = PackedVector2Array(0.01, 0.004, 0.004, 0.01, -0.004, 0.01, -0.01, 0.004, -0.01, -0.004, -0.004, -0.01, 0.004, -0.01, 0.01, -0.004)
+smooth_faces = true
+material = SubResource("StandardMaterial3D_6uncb")
+
+[node name="BALLS 2" parent="." index="5" unique_id=1010079248 instance=ExtResource("3_6uncb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.298031, -1.1920929e-07, -0.21602595)
+float_height = 0.0
+
+[node name="Path3D" parent="BALLS 2" index="1" unique_id=1010815469 node_paths=PackedStringArray("end_node")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3755637, 0.040764928)
+end_node = NodePath("../../AttachmentPoints/Marker3D2")
+rope_length = 1.205
+
+[node name="CSGPolygon3D" parent="BALLS 2/Path3D" index="0" unique_id=548303749]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+polygon = PackedVector2Array(0.01, 0.004, 0.004, 0.01, -0.004, 0.01, -0.01, 0.004, -0.01, -0.004, -0.004, -0.01, 0.004, -0.01, 0.01, -0.004)
+smooth_faces = true
+material = SubResource("StandardMaterial3D_6uncb")
+
+[node name="BALLS 3" parent="." index="6" unique_id=499525391 instance=ExtResource("3_6uncb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.298031, -1.1920929e-07, -1.7397184)
+float_height = 0.0
+
+[node name="Sphere" parent="BALLS 3" index="0" unique_id=815253739]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0075609684)
+
+[node name="Path3D" parent="BALLS 3" index="1" unique_id=1010815469 node_paths=PackedStringArray("end_node")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3755637, 0.040764928)
+end_node = NodePath("../../AttachmentPoints/Marker3D3")
+rope_length = 1.205
+
+[node name="CSGPolygon3D" parent="BALLS 3/Path3D" index="0" unique_id=548303749]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+polygon = PackedVector2Array(0.01, 0.004, 0.004, 0.01, -0.004, 0.01, -0.01, 0.004, -0.01, -0.004, -0.004, -0.01, 0.004, -0.01, 0.01, -0.004)
+smooth_faces = true
+material = SubResource("StandardMaterial3D_6uncb")
+
+[node name="BALLS 4" parent="." index="7" unique_id=1463703231 instance=ExtResource("3_6uncb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.98711544, -1.1920929e-07, 1.7242826)
+float_height = 0.0
+
+[node name="Sphere" parent="BALLS 4" index="0" unique_id=815253739]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.08016038, 0, 0)
+
+[node name="Path3D" parent="BALLS 4" index="1" unique_id=1010815469 node_paths=PackedStringArray("end_node")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3755637, 0.040764928)
+end_node = NodePath("../../AttachmentPoints/Marker3D4")
+rope_length = 1.205
+
+[node name="CSGPolygon3D" parent="BALLS 4/Path3D" index="0" unique_id=548303749]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+polygon = PackedVector2Array(0.01, 0.004, 0.004, 0.01, -0.004, 0.01, -0.01, 0.004, -0.01, -0.004, -0.004, -0.01, 0.004, -0.01, 0.01, -0.004)
+smooth_faces = true
+material = SubResource("StandardMaterial3D_6uncb")
+
+[node name="BALLS 5" parent="." index="8" unique_id=1236132288 instance=ExtResource("3_6uncb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3381021, -1.1920929e-07, -0.21602595)
+float_height = 0.0
+
+[node name="Path3D" parent="BALLS 5" index="1" unique_id=1010815469 node_paths=PackedStringArray("end_node")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3755637, 0.040764928)
+end_node = NodePath("../../AttachmentPoints/Marker3D5")
+rope_length = 1.205
+
+[node name="CSGPolygon3D" parent="BALLS 5/Path3D" index="0" unique_id=548303749]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+polygon = PackedVector2Array(0.01, 0.004, 0.004, 0.01, -0.004, 0.01, -0.01, 0.004, -0.01, -0.004, -0.004, -0.01, 0.004, -0.01, 0.01, -0.004)
+smooth_faces = true
+material = SubResource("StandardMaterial3D_6uncb")
+
+[node name="BALLS 6" parent="." index="9" unique_id=1317152937 instance=ExtResource("3_6uncb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3534689, -1.1920929e-07, -1.7397184)
+float_height = 0.0
+
+[node name="Sphere" parent="BALLS 6" index="0" unique_id=815253739]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0075609684)
+
+[node name="Path3D" parent="BALLS 6" index="1" unique_id=1010815469 node_paths=PackedStringArray("end_node")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3755637, 0.040764928)
+end_node = NodePath("../../AttachmentPoints/Marker3D6")
+rope_length = 1.205
+
+[node name="CSGPolygon3D" parent="BALLS 6/Path3D" index="0" unique_id=548303749]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+polygon = PackedVector2Array(0.01, 0.004, 0.004, 0.01, -0.004, 0.01, -0.01, 0.004, -0.01, -0.004, -0.004, -0.01, 0.004, -0.01, 0.01, -0.004)
+smooth_faces = true
+material = SubResource("StandardMaterial3D_6uncb")
+
+[editable path="BALLS 1"]
+[editable path="BALLS 2"]
+[editable path="BALLS 3"]
+[editable path="BALLS 4"]
+[editable path="BALLS 5"]
+[editable path="BALLS 6"]

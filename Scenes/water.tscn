@@ -1,0 +1,108 @@
+[gd_scene format=3 uid="uid://cort67ua5u0mp"]
+
+[ext_resource type="Shader" uid="uid://cmhd7rkwk4jkw" path="res://Shaders/WaterShaderScript 1.gdshader" id="1_bjixy"]
+[ext_resource type="Script" uid="uid://cc7x3dx5oilua" path="res://Scripts/WaterSurface 1.gd" id="2_bjixy"]
+[ext_resource type="PackedScene" uid="uid://dih8rcishp4tv" path="res://Scenes/boat_thingy.tscn" id="3_jf7k4"]
+[ext_resource type="Script" uid="uid://dmm45lt2aj5fr" path="res://Scripts/bouyancy 1.gd" id="4_bjixy"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_dcmoc"]
+subdivide_width = 200
+subdivide_depth = 200
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dcmoc"]
+render_priority = 0
+shader = ExtResource("1_bjixy")
+shader_parameter/shallow_color = Color(0.2, 0.75, 0.78, 1)
+shader_parameter/deep_color = Color(0.09959052, 0.11946321, 0.3277851, 1)
+shader_parameter/foam_color = Color(0.92, 0.98, 1, 1)
+shader_parameter/crest_color = Color(0.55, 0.91, 0.96, 1)
+shader_parameter/water_opacity = 1.0
+shader_parameter/gradient_depth = 7.572000356410119
+shader_parameter/wave_amplitude = 0.08800000418
+shader_parameter/wave_frequency = 0.67500002880262
+shader_parameter/wave_speed = 1.0
+shader_parameter/wave_direction = Vector2(1, 0.35)
+shader_parameter/secondary_wave_strength = 0.5
+shader_parameter/wave_time = 0.0
+shader_parameter/foam_scale = 6.7150003189625
+shader_parameter/foam_speed = 0.7
+shader_parameter/foam_amount = 1.4350000681625
+shader_parameter/foam_sharpness = 0.1150000054625
+shader_parameter/shoreline_width = 0.93700004380898
+shader_parameter/crest_threshold = 0.2850000610375001
+shader_parameter/crest_strength = 0.0010000000475
+shader_parameter/refraction_strength = 0.0
+shader_parameter/refraction_speed = 1.1910000565725
+
+[sub_resource type="BoxMesh" id="BoxMesh_jv8hl"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dcmoc"]
+albedo_color = Color(0.33, 0.189585, 0.1023, 1)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_audoj"]
+
+[sub_resource type="Sky" id="Sky_rxnv0"]
+sky_material = SubResource("ProceduralSkyMaterial_audoj")
+
+[sub_resource type="Environment" id="Environment_jv8hl"]
+background_mode = 2
+sky = SubResource("Sky_rxnv0")
+
+[node name="water" type="Node3D" unique_id=1483777559]
+
+[node name="Water" type="MeshInstance3D" parent="." unique_id=1720738732]
+transform = Transform3D(121.63626, 0, 0, 0, 1.0000004, 0, 0, 0, 146.88391, 0, 0, -1.2829552)
+mesh = SubResource("PlaneMesh_dcmoc")
+surface_material_override/0 = SubResource("ShaderMaterial_dcmoc")
+script = ExtResource("2_bjixy")
+wave_amplitude = 0.09
+wave_frequency = 0.6799999999999999
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="." unique_id=1470562875]
+transform = Transform3D(-9.260589, -2.162852, -7.345642, -2.6249666, 12.237272, 0.010292003, 7.165965, 1.6875813, -9.489017, 12.828864, -6.8200502, -8.548445)
+mesh = SubResource("BoxMesh_jv8hl")
+surface_material_override/0 = SubResource("StandardMaterial3D_dcmoc")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1593152170]
+transform = Transform3D(-54.72631, 0.2227165, 0.21605873, 12.502663, 0.9748829, -6.516646e-07, -0.20970535, 0.00085342675, -56.385403, 0, -3.453394, 0)
+mesh = SubResource("BoxMesh_jv8hl")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=844968424]
+transform = Transform3D(0.9701257, 0.12703536, -0.20668381, -1.7398358e-08, 0.85194284, 0.52363485, 0.24260294, -0.5079916, 0.8264916, -3.1827507, 2.9717546, 2.6572695)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=213083739]
+transform = Transform3D(-0.7937132, -0.5920297, -0.1397147, 0.005494568, -0.2366519, 0.9715789, -0.60826737, 0.77038735, 0.19108666, -17.901428, 14.502533, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=257988289]
+environment = SubResource("Environment_jv8hl")
+
+[node name="BoatThingy" parent="." unique_id=45029623 node_paths=PackedStringArray("water_mesh") instance=ExtResource("3_jf7k4")]
+transform = Transform3D(0.4819924, 0, -0.8761754, 0, 1, 0, 0.8761754, 0, 0.4819924, -0.13533115, 0, -2.2911549)
+script = ExtResource("4_bjixy")
+water_mesh = NodePath("../Water")
+
+[node name="BALLS 1" parent="BoatThingy" index="4" unique_id=366238209 node_paths=PackedStringArray("water_mesh")]
+water_mesh = NodePath("../../Water")
+
+[node name="BALLS 2" parent="BoatThingy" index="5" unique_id=1010079248 node_paths=PackedStringArray("water_mesh")]
+water_mesh = NodePath("../../Water")
+
+[node name="BALLS 3" parent="BoatThingy" index="6" unique_id=499525391 node_paths=PackedStringArray("water_mesh")]
+water_mesh = NodePath("../../Water")
+
+[node name="BALLS 4" parent="BoatThingy" index="7" unique_id=1463703231 node_paths=PackedStringArray("water_mesh")]
+water_mesh = NodePath("../../Water")
+
+[node name="BALLS 5" parent="BoatThingy" index="8" unique_id=1236132288 node_paths=PackedStringArray("water_mesh")]
+water_mesh = NodePath("../../Water")
+
+[node name="BALLS 6" parent="BoatThingy" index="9" unique_id=1317152937 node_paths=PackedStringArray("water_mesh")]
+water_mesh = NodePath("../../Water")
+
+[editable path="BoatThingy"]
+[editable path="BoatThingy/BALLS 1"]
+[editable path="BoatThingy/BALLS 2"]
+[editable path="BoatThingy/BALLS 3"]
+[editable path="BoatThingy/BALLS 4"]
+[editable path="BoatThingy/BALLS 5"]
+[editable path="BoatThingy/BALLS 6"]

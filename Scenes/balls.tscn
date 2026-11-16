@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://uos6n5ukseb"]
+
+[ext_resource type="PackedScene" uid="uid://c7d6a752gb67t" path="res://Models/BALLS 1.glb" id="1_tger7"]
+[ext_resource type="Script" uid="uid://dmm45lt2aj5fr" path="res://Scripts/bouyancy 1.gd" id="2_2f4vv"]
+[ext_resource type="Material" uid="uid://dmx2aif1kmtai" path="res://Shaders/new_standard_material_3d.tres" id="3_q2ish"]
+[ext_resource type="Script" uid="uid://d08d6c7gk3m5i" path="res://Scripts/ropespawner.gd" id="4_2f4vv"]
+
+[sub_resource type="Curve3D" id="Curve3D_ru48t"]
+
+[node name="BALLS 1" unique_id=366238209 instance=ExtResource("1_tger7")]
+script = ExtResource("2_2f4vv")
+follow_speed = 14.82
+
+[node name="Sphere" parent="." index="0" unique_id=815253739]
+material_override = ExtResource("3_q2ish")
+
+[node name="Path3D" type="Path3D" parent="." index="1" unique_id=1010815469 node_paths=PackedStringArray("start_node")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.420677, 0)
+curve = SubResource("Curve3D_ru48t")
+debug_custom_color = Color(0.7865508, 0.09786188, 0.99999994, 1)
+script = ExtResource("4_2f4vv")
+start_node = NodePath(".")
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Path3D" index="0" unique_id=548303749]
+transform = Transform3D(0.454, 0, 0, 0, 0.454, 0, 0, 0, 1, 0, 0, 0)
+polygon = PackedVector2Array(0.046193976, 0.019134171, 0.019134171, 0.046193976, -0.019134171, 0.046193976, -0.046193976, 0.019134171, -0.046193976, -0.019134171, -0.019134171, -0.046193976, 0.019134171, -0.046193976, 0.046193976, -0.019134171)
+mode = 2
+path_node = NodePath("..")
+path_interval_type = 1
+path_interval = 1.0
+path_simplify_angle = 0.0
+path_rotation = 2
+path_rotation_accurate = false
+path_local = true
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = false
