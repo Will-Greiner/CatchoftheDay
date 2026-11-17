@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://c7d6a752gb67t" path="res://Models/BALLS 1.glb" id="1_tger7"]
 [ext_resource type="Script" uid="uid://dmm45lt2aj5fr" path="res://Scripts/bouyancy 1.gd" id="2_2f4vv"]
-[ext_resource type="Material" uid="uid://dmx2aif1kmtai" path="res://Shaders/new_standard_material_3d.tres" id="3_q2ish"]
+[ext_resource type="Material" uid="uid://dmx2aif1kmtai" path="res://Shaders/new_standard_material_3d.tres" id="3_2f4vv"]
 [ext_resource type="Script" uid="uid://d08d6c7gk3m5i" path="res://Scripts/ropespawner.gd" id="4_2f4vv"]
 
 [sub_resource type="Curve3D" id="Curve3D_ru48t"]
@@ -12,7 +12,7 @@ script = ExtResource("2_2f4vv")
 follow_speed = 14.82
 
 [node name="Sphere" parent="." index="0" unique_id=815253739]
-material_override = ExtResource("3_q2ish")
+material_override = ExtResource("3_2f4vv")
 
 [node name="Path3D" type="Path3D" parent="." index="1" unique_id=1010815469 node_paths=PackedStringArray("start_node")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.420677, 0)
