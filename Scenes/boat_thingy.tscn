@@ -3,11 +3,13 @@
 [ext_resource type="PackedScene" uid="uid://dj6tnsg0ucf10" path="res://Models/BoatThingy.glb" id="1_36iod"]
 [ext_resource type="Material" uid="uid://dmx2aif1kmtai" path="res://Shaders/new_standard_material_3d.tres" id="2_s6mxw"]
 [ext_resource type="PackedScene" uid="uid://uos6n5ukseb" path="res://Scenes/balls.tscn" id="3_6uncb"]
+[ext_resource type="Texture2D" uid="uid://dka23wj53y3hu" path="res://Textures/1024x1024.png" id="4_xwrym"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6uncb"]
 diffuse_mode = 3
 specular_mode = 1
-albedo_color = Color(0.36004192, 0.17922583, 0.08862429, 1)
+albedo_texture = ExtResource("4_xwrym")
+uv1_scale = Vector3(3, 3, 3)
 
 [node name="BoatThingy" unique_id=45029623 instance=ExtResource("1_36iod")]
 
