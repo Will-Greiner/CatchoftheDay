@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cdl2btntr674p"]
+
+[ext_resource type="Script" uid="uid://mjf4kjdl7646" path="res://interactable.gd" id="1_msfch"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rxnv0"]
+albedo_color = Color(0.011764706, 1, 0.06666667, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_jv8hl"]
+material = SubResource("StandardMaterial3D_rxnv0")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_audoj"]
+
+[node name="Area3D" type="Area3D" unique_id=11193654]
+script = ExtResource("1_msfch")
+text = null
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=546528667]
+mesh = SubResource("BoxMesh_jv8hl")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1642975022]
+shape = SubResource("BoxShape3D_audoj")

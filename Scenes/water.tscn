@@ -4,6 +4,9 @@
 [ext_resource type="Script" uid="uid://cc7x3dx5oilua" path="res://Scripts/WaterSurface 1.gd" id="2_bjixy"]
 [ext_resource type="PackedScene" uid="uid://dih8rcishp4tv" path="res://Scenes/boat_thingy.tscn" id="3_jf7k4"]
 [ext_resource type="Script" uid="uid://dmm45lt2aj5fr" path="res://Scripts/bouyancy 1.gd" id="4_bjixy"]
+[ext_resource type="PackedScene" uid="uid://bquxms2ydvuk" path="res://Scenes/player.tscn" id="5_rqihb"]
+[ext_resource type="PackedScene" uid="uid://s5idtummpk07" path="res://Scenes/MiniGame.tscn" id="6_jf7k4"]
+[ext_resource type="Script" uid="uid://cehk76ae4os8b" path="res://Scripts/camera_3d.gd" id="7_mkv50"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_dcmoc"]
 subdivide_width = 200
@@ -82,7 +85,7 @@ transform = Transform3D(-0.7937132, -0.5920297, -0.1397147, 0.005494568, -0.2366
 environment = SubResource("Environment_jv8hl")
 
 [node name="BoatThingy" parent="." unique_id=45029623 node_paths=PackedStringArray("water_mesh") instance=ExtResource("3_jf7k4")]
-transform = Transform3D(0.4819924, 0, -0.8761754, 0, 1, 0, 0.8761754, 0, 0.4819924, -0.13533115, 0, -2.2911549)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.13533115, 0, -2.2911549)
 script = ExtResource("4_bjixy")
 water_mesh = NodePath("../Water")
 
@@ -103,6 +106,17 @@ water_mesh = NodePath("../../Water")
 
 [node name="BALLS 6" parent="BoatThingy" index="9" unique_id=1317152937 node_paths=PackedStringArray("water_mesh")]
 water_mesh = NodePath("../../Water")
+
+[node name="Player" parent="BoatThingy" unique_id=674516708 instance=ExtResource("5_rqihb")]
+transform = Transform3D(0.35000002, 0, 0, 0, 0.35, 0, 0, 0, 0.35000002, 0.01734066, 0.6700002, -1.6488853)
+
+[node name="Area3D" parent="BoatThingy" unique_id=2074624380 instance=ExtResource("6_jf7k4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0056404173, 0.47613811, -0.24445844)
+
+[node name="Top Down Camera" type="Camera3D" parent="." unique_id=2123489242]
+transform = Transform3D(-1, 8.076812e-08, -3.345525e-08, 0, 0.38268346, 0.9238795, 8.742278e-08, 0.92387956, -0.38268346, 0, 5.5, -4.895)
+current = true
+script = ExtResource("7_mkv50")
 
 [editable path="BoatThingy"]
 [editable path="BoatThingy/BALLS 1"]

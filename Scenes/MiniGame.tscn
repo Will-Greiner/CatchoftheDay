@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://s5idtummpk07"]
+
+[ext_resource type="Script" uid="uid://dg4yqrjqccjs8" path="res://Scripts/DrivingMGStart.gd" id="1_yf1pe"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jv8hl"]
+
+[node name="Area3D" type="Area3D" unique_id=2074624380]
+script = ExtResource("1_yf1pe")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1567716321]
+shape = SubResource("BoxShape3D_jv8hl")

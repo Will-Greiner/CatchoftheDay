@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://bquxms2ydvuk"]
+
+[ext_resource type="Script" uid="uid://5rj35oo3jf1c" path="res://Player.gd" id="1_4flbx"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_rxnv0"]
+radius = 1.0112528
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_jv8hl"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2dftf"]
+albedo_color = Color(0.1882353, 1, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_audoj"]
+albedo_color = Color(1, 0.5137255, 1, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_rxnv0"]
+material = SubResource("StandardMaterial3D_audoj")
+radius = 0.084472656
+height = 0.31573486
+
+[node name="Player" type="CharacterBody3D" unique_id=674516708]
+script = ExtResource("1_4flbx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=343238651]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00031590462, 2.3841858e-07, -0.013367176)
+shape = SubResource("SphereShape3D_rxnv0")
+disabled = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1342673061]
+mesh = SubResource("CapsuleMesh_jv8hl")
+surface_material_override/0 = SubResource("StandardMaterial3D_2dftf")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D" unique_id=810212379]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0.4486853, 0.576097)
+mesh = SubResource("CapsuleMesh_rxnv0")
+
+[node name="RayCast3D" type="RayCast3D" parent="." unique_id=1482539127]
+unique_name_in_owner = true
+transform = Transform3D(1.25, 0, 0, 0, -5.4639237e-08, 1.25, 0, -1.25, -5.4639237e-08, 0, -0.29502332, -0.030955285)
+collide_with_areas = true
+
+[node name="StationRC" type="RayCast3D" parent="." unique_id=91216686]
+unique_name_in_owner = true
+transform = Transform3D(1.455, 0, 0, 0, -6.360007e-08, 1.455, 0, -1.455, -6.360007e-08, 0, -0.585, 0)
+collision_mask = 2
+collide_with_areas = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2054453188]
+
+[node name="BoxContainer" type="BoxContainer" parent="CanvasLayer" unique_id=179156818]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+
+[node name="Label" type="Label" parent="CanvasLayer/BoxContainer" unique_id=598522132]
+layout_mode = 2
+text = "Press E to Interact"
