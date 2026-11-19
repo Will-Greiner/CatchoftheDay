@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://c183d1snxvbwk"]
+
+[ext_resource type="PackedScene" uid="uid://bpl6e7dyx25cv" path="res://Models/Naval Mine.glb" id="1_pr6ed"]
+
+[node name="Node3D" type="Node3D" unique_id=72064517]
+
+[node name="Naval Mine2" parent="." unique_id=809677614 instance=ExtResource("1_pr6ed")]

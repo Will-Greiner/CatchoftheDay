@@ -1,0 +1,17 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://boe1b5l1q7vs2"]
+
+[ext_resource type="Texture2D" uid="uid://cvu38h0d1tiqq" path="res://Textures/JazzTextures/DefaultMaterial_BaseColor.png" id="1_akoew"]
+[ext_resource type="Texture2D" uid="uid://wvlc1t6tujm0" path="res://Textures/JazzTextures/DefaultMaterial_Displacement.png" id="2_d1xe8"]
+[ext_resource type="Texture2D" uid="uid://dpg6rsx7rqie5" path="res://Textures/JazzTextures/DefaultMaterial_Metallic.png" id="3_wftto"]
+[ext_resource type="Texture2D" uid="uid://ccw0cxe7b37ek" path="res://Textures/JazzTextures/DefaultMaterial_Normal.png" id="4_rul8h"]
+[ext_resource type="Texture2D" uid="uid://ciyc7i02g0ge" path="res://Textures/JazzTextures/DefaultMaterial_Roughness.png" id="5_fgsxk"]
+
+[resource]
+albedo_texture = ExtResource("1_akoew")
+metallic = 1.0
+metallic_texture = ExtResource("3_wftto")
+roughness_texture = ExtResource("5_fgsxk")
+normal_enabled = true
+normal_texture = ExtResource("4_rul8h")
+heightmap_enabled = true
+heightmap_texture = ExtResource("2_d1xe8")

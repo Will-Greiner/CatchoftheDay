@@ -5,8 +5,8 @@ var requiredtime = 1.0
 @export var hasChild = false
 var child = null
 var holdtime = 0.0
-var driving = false
-@onready var boat = $".."
+@export var driving = false
+@onready var boat = %BoatBody
 
 
 func _physics_process(delta: float) -> void:

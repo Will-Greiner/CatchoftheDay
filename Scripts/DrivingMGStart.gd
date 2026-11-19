@@ -1,10 +1,10 @@
 extends Area3D
-@onready var camera := $"../../Top Down Camera"
+@onready var camera := $"../../../Top Down Camera"
 var text = "Drive"
 var isDriving = false
 var timer = 0.0
-@onready var player := $%Player
-@onready var boat := $".."
+@onready var player := %Player
+@onready var boat := %BoatBody
 	
 func Drive():
 	#start minigame
