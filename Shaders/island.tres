@@ -1,0 +1,6 @@
+[gd_resource type="ORMMaterial3D" format=3 uid="uid://bdfredkhkehs0"]
+
+[ext_resource type="Texture2D" uid="uid://dbuxe14ub7p1l" path="res://Textures/island lighting test_island.png" id="1_p6ni2"]
+
+[resource]
+albedo_texture = ExtResource("1_p6ni2")

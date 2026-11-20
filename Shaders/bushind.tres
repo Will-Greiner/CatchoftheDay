@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://2ubudf7qkejf"]
+
+[ext_resource type="Texture2D" uid="uid://bvh2cywa71av1" path="res://Textures/e75cacdbfbc1bfd1d9dce0027f54c5c116439ba5.png" id="1_uhla4"]
+
+[resource]
+cull_mode = 2
+shading_mode = 0
+albedo_texture = ExtResource("1_uhla4")
