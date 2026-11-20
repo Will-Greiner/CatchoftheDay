@@ -1,0 +1,17 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://di4gtxigco5h5"]
+
+[ext_resource type="Texture2D" uid="uid://6maglx0p31nt" path="res://Textures/JazzTextures/Orange_Material_BaseColor.png" id="1_80q0j"]
+[ext_resource type="Texture2D" uid="uid://wj7b4ekhjbyw" path="res://Textures/JazzTextures/Orange_Material_Displacement.png" id="2_ror24"]
+[ext_resource type="Texture2D" uid="uid://de2muy3ugc8l7" path="res://Textures/JazzTextures/Orange_Material_Metallic.png" id="3_as1fy"]
+[ext_resource type="Texture2D" uid="uid://cwh6wk1tww7ed" path="res://Textures/JazzTextures/Orange_Material_Normal.png" id="4_wai31"]
+[ext_resource type="Texture2D" uid="uid://b0bm8kxo580mn" path="res://Textures/JazzTextures/Orange_Material_Roughness.png" id="5_ihqwp"]
+
+[resource]
+albedo_texture = ExtResource("1_80q0j")
+metallic = 1.0
+metallic_texture = ExtResource("3_as1fy")
+roughness_texture = ExtResource("5_ihqwp")
+normal_enabled = true
+normal_texture = ExtResource("4_wai31")
+heightmap_enabled = true
+heightmap_texture = ExtResource("2_ror24")

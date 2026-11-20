@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bquxms2ydvuk"]
 
-[ext_resource type="Script" uid="uid://5rj35oo3jf1c" path="res://Player.gd" id="1_4flbx"]
+[ext_resource type="Script" uid="uid://5rj35oo3jf1c" path="res://Scripts/Player.gd" id="1_4flbx"]
+[ext_resource type="Script" uid="uid://dmm45lt2aj5fr" path="res://Scripts/bouyancy 1.gd" id="2_cvnsp"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_rxnv0"]
 radius = 1.0112528
@@ -19,16 +20,17 @@ radius = 0.084472656
 height = 0.31573486
 
 [node name="Player" type="CharacterBody3D" unique_id=674516708]
+motion_mode = 1
 script = ExtResource("1_4flbx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=343238651]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00031590462, 2.3841858e-07, -0.013367176)
 shape = SubResource("SphereShape3D_rxnv0")
-disabled = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1342673061]
 mesh = SubResource("CapsuleMesh_jv8hl")
 surface_material_override/0 = SubResource("StandardMaterial3D_2dftf")
+script = ExtResource("2_cvnsp")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D" unique_id=810212379]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0.4486853, 0.576097)
@@ -36,7 +38,8 @@ mesh = SubResource("CapsuleMesh_rxnv0")
 
 [node name="RayCast3D" type="RayCast3D" parent="." unique_id=1482539127]
 unique_name_in_owner = true
-transform = Transform3D(1.25, 0, 0, 0, -5.4639237e-08, 1.25, 0, -1.25, -5.4639237e-08, 0, -0.29502332, -0.030955285)
+transform = Transform3D(1.48, 0, 0, 0, -6.4692856e-08, 1.48, 0, -1.48, -6.4692856e-08, 0, -0.29502332, -0.030955285)
+hit_from_inside = true
 collide_with_areas = true
 
 [node name="StationRC" type="RayCast3D" parent="." unique_id=91216686]
